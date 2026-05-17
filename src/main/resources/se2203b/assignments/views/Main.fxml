@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-image: url('file:src/main/resources/se2203b/assignments/images/WesternBackground.png');              -fx-background-size: stretch;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se2203b.assignments.controller.MainController">
+
+    <top>
+        <MenuBar fx:id="menuBar">
+            <Menu text="File">
+                <MenuItem fx:id="mnuLogout" onAction="#handleLogout" text="Logout" />
+                <SeparatorMenuItem />
+                <MenuItem fx:id="mnuExit" onAction="#handleExit" text="Exit" />
+            </Menu>
+
+            <Menu fx:id="menuBusiness01" text="Analyze Flight Performance">
+                <MenuItem fx:id="mnuRequestAccount" onAction="#handleBusinessManagerTask" text="Action1" />
+            </Menu>
+         <Menu fx:id="menuBusiness02" mnemonicParsing="false" text="Manage Frequent Flier Program">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleBusinessManagerTask" text="Action 1" />
+           </items>
+         </Menu>
+         <Menu fx:id="menuBusiness03" mnemonicParsing="false" text="Manage Flight">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleManageFlight" text="Add/Modify/Delete Flights" />
+           </items>
+         </Menu>
+         <Menu fx:id="menuBusiness04" mnemonicParsing="false" text="iSky Users">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleBusinessManagerTask" text="Request Adding User Account" />
+               <MenuItem mnemonicParsing="false" onAction="#handleBusinessManagerTask" text="Request Removing User Account" />
+           </items>
+         </Menu>
+         <Menu fx:id="menuNetwork01" mnemonicParsing="false" text="Manage User Account">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleNetworkAdministratorTask" text="Action 1" />
+           </items>
+         </Menu>
+
+            <Menu fx:id="menuNetwork02" text="Maintain Web Serve">
+                <MenuItem fx:id="mnuCreateAccount" onAction="#handleNetworkAdministratorTask" text="Action 1" />
+            </Menu>
+         <Menu fx:id="menuNetwork03" mnemonicParsing="false" text="Maintain Database Server">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleNetworkAdministratorTask" text="Action 1" />
+           </items>
+         </Menu>
+         <Menu fx:id="menuNetwork04" mnemonicParsing="false" text="Analyze Network Usage">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleNetworkAdministratorTask" text="Action 1" />
+           </items>
+         </Menu>
+
+            <Menu fx:id="menuLob01" text="Manage Reservation">
+                <MenuItem fx:id="mnuViewReports" onAction="#handleLOBTask" text="Action1" />
+            </Menu>
+         <Menu fx:id="menuLob02" mnemonicParsing="false" text="Query Flight Status">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleLOBTask" text="Action 1" />
+           </items>
+         </Menu>
+         <Menu fx:id="menuLob03" mnemonicParsing="false" text="Query Ticket Status">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#handleLOBTask" text="Action 1" />
+           </items>
+         </Menu>
+         <Menu fx:id="menuLob04" mnemonicParsing="false" text="Confirm Passenger Ticket">
+           <items>
+             <MenuItem mnemonicParsing="false" text="Action 1" />
+           </items>
+         </Menu>
+
+            <Menu fx:id="aboutMenu" mnemonicParsing="false" text="About">
+                <items>
+                    <MenuItem fx:id="aboutusMenuItem" mnemonicParsing="false" onAction="#showAbout" text="About Us" />
+                </items>
+            </Menu>
+            <Menu fx:id="userMenuItem" mnemonicParsing="false" text=" " visible="false">
+                <items>
+                    <MenuItem fx:id="changePasswordMenuItem" mnemonicParsing="false" onAction="#changePassword" text="Change Password" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem fx:id="logoutMenuItem" disable="true" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+            </padding>
+
+            <Label fx:id="lblWelcome" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Welcome" />
+            <Label fx:id="lblRole" text="Role:" />
+            <Separator />
+            <Label fx:id="lblBody" text="Select an option from the menu." wrapText="true" />
+        </VBox>
+    </center>
+</BorderPane>

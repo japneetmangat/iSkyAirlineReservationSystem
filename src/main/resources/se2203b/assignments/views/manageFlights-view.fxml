@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="se2203b.assignments.controller.ManageFlightController"
+            prefWidth="870" prefHeight="560">
+
+    <top>
+        <VBox>
+            <padding><Insets top="20" left="20" right="20" bottom="10"/></padding>
+            <Label text="Manage Airline Flights"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <padding><Insets top="0" left="20" right="20" bottom="0"/></padding>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button text="Add New Flight" onAction="#handleAddNewFlight"
+                        style="-fx-background-color: #e8e8e8;" />
+            </HBox>
+
+            <TableView fx:id="tableFlights" VBox.vgrow="ALWAYS" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colFlightNumber"  text="Flight Number"  prefWidth="120" />
+                    <TableColumn fx:id="colOrigin"        text="Origin"         prefWidth="120" />
+                    <TableColumn fx:id="colDestination"   text="Destination"    prefWidth="150" />
+                    <TableColumn fx:id="colDepartureTime" text="Departure Time" prefWidth="130" />
+                    <TableColumn fx:id="colArrivalTime"   text="Arrival Time"   prefWidth="120" />
+                    <TableColumn fx:id="colLaunchDate"    text="Launch Date"    prefWidth="120" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10">
+            <padding><Insets top="12" left="20" right="20" bottom="20"/></padding>
+            <Button text="Remove" onAction="#handleRemove"
+                    style="-fx-text-fill: red; -fx-border-color: red; -fx-background-color: white;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Exit" onAction="#handleExit" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

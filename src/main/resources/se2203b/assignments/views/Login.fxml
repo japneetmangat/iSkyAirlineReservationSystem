@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se2203b.assignments.controller.LoginController">
+
+    <center>
+        <VBox alignment="CENTER" spacing="14.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="28.0" left="28.0" right="28.0" top="28.0" />
+            </padding>
+
+            <VBox alignment="CENTER" maxWidth="520.0" spacing="6.0">
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/WesternLogo.png" />
+               </image>
+            </ImageView>
+                <Label fx:id="lblTitle" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="iSky Login" />
+                <Label fx:id="lblSubtitle" text="Sign in to access iSky functionality." wrapText="true" />
+            </VBox>
+
+            <Separator maxWidth="520.0" />
+
+            <VBox maxWidth="520.0" spacing="10.0" style="-fx-background-color: rgba(255,255,255,0.85); -fx-background-radius: 10px; -fx-border-radius: 10px;">
+                <padding>
+                    <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                </padding>
+
+                <GridPane fx:id="gridLogin" hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="140.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtUser" promptText="e.g., isky-master" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <PasswordField fx:id="pwd" promptText="Enter your password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label fx:id="lblStatus" style="-fx-text-fill: #b00020;" text="" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <Button fx:id="btnLogin" defaultButton="true" onAction="#handleLogin" text="Login" />
+                    <Button fx:id="btnExit" cancelButton="true" onAction="#handleExit" text="Exit" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
